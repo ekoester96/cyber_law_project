@@ -1,0 +1,22 @@
+name: Deploy Project
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Pull latest code
+        run: |
+          cd ~/sites/cyber_law_project
+          git pull origin main
+
+      - name: Install dependencies and build
+        run: |
+          cd ~/sites/cyber_law_project
+          npm install
+          npm run build
+
+      - name: Restart Nginx container
+        run: docker restart project
