@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import { Shield, Users, BookOpen, ArrowRight } from "lucide-react";
+import ethanPhoto from "../../assets/ethan-koester-schmidt.jpeg";
 
 const teamMembers = [
   {
@@ -10,7 +11,7 @@ const teamMembers = [
   {
     name: "Ethan Koester-Schmidt",
     role: "Research Contributor",
-    photo: "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMG1hbiUyMHByb2Zlc3Npb25hbCUyMHN0dWRlbnQlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NzU2NzA3Mzl8MA&ixlib=rb-4.1.0&q=80&w=400",
+    photo: ethanPhoto,
   },
   {
     name: "Dawson Ulrich",
