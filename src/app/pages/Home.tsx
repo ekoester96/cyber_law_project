@@ -1,22 +1,38 @@
 import { NavLink } from "react-router";
 import { Shield, Users, BookOpen, ArrowRight } from "lucide-react";
+import kirstenPhoto from "../../assets/kirsten-capangpangan.jpeg";
 import ethanPhoto from "../../assets/ethan-koester-schmidt.jpeg";
+import dawsonPhoto from "../../assets/dawson-ulrich.png";
 
 const teamMembers = [
   {
     name: "Kirsten Capangpangan",
     role: "Research Contributor",
-    photo: "https://images.unsplash.com/photo-1605176647037-cb9e5e5dc87d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwcHJvZmVzc2lvbmFsJTIwc3R1ZGVudCUyMHBvcnRyYWl0fGVufDF8fHx8MTc3NTY3MDczOHww&ixlib=rb-4.1.0&q=80&w=400",
+    photo: kirstenPhoto,
+    imageStyle: {
+      objectPosition: "center 30%",
+      transform: "scale(1.35)",
+      filter: "brightness(1.08) contrast(1.05) saturate(1.08)",
+    },
   },
   {
     name: "Ethan Koester-Schmidt",
     role: "Research Contributor",
     photo: ethanPhoto,
+    imageStyle: {
+      objectPosition: "center 20%",
+      filter: "brightness(1.04) contrast(1.04) saturate(1.03)",
+    },
   },
   {
     name: "Dawson Ulrich",
     role: "Research Contributor",
-    photo: "https://images.unsplash.com/photo-1551706872-893907c44a3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxlJTIwY29sbGVnZSUyMHN0dWRlbnQlMjBzbWlsaW5nJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3NTY3MDczOXww&ixlib=rb-4.1.0&q=80&w=400",
+    photo: dawsonPhoto,
+    imageStyle: {
+      objectPosition: "center 22%",
+      transform: "scale(1.2)",
+      filter: "brightness(1.06) contrast(1.08) saturate(1.04)",
+    },
   },
 ];
 
@@ -147,7 +163,10 @@ export function Home() {
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                    style={member.imageStyle}
                   />
                 </div>
                 <div className="pt-5 px-4">
