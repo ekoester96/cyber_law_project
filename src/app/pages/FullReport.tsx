@@ -1,4 +1,4 @@
-import { FileText, Download, ChevronRight } from "lucide-react";
+import { FileText, ChevronRight } from "lucide-react";
 import { NavLink } from "react-router";
 
 const sections = [
@@ -37,18 +37,18 @@ export function FullReport() {
   return (
     <div>
       {/* Hero */}
-      <div className="border-b py-16" style={{ background: "#0d1530", borderColor: "#1e3a5f" }}>
+      <div className="border-b py-16" style={{ background: "var(--uark-card-strong)", borderColor: "var(--uark-border)" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-xs px-3 py-1 rounded-full border" style={{ color: "#3b82f6", borderColor: "rgba(59,130,246,0.4)", background: "rgba(59,130,246,0.1)" }}>
+            <span className="text-xs px-3 py-1 rounded-full border" style={{ color: "var(--uark-blue)", borderColor: "var(--uark-border)", background: "var(--uark-soft-blue)" }}>
               Written Report
             </span>
           </div>
-          <h1 style={{ color: "#f1f5f9", fontWeight: 800, fontSize: "clamp(1.6rem, 4vw, 2.4rem)" }}>Full Research Paper</h1>
-          <p style={{ color: "#94a3b8", marginTop: "0.5rem" }}>
+          <h1 style={{ color: "var(--uark-ink)", fontWeight: 800, fontSize: "clamp(1.6rem, 4vw, 2.4rem)" }}>Full Research Paper</h1>
+          <p style={{ color: "var(--uark-muted)", marginTop: "0.5rem" }}>
             Location Tracking and Privacy: Legal Protections in the Digital Age of Social Media
           </p>
-          <p style={{ color: "#64748b", fontSize: "0.85rem", marginTop: "0.3rem" }}>
+          <p style={{ color: "var(--uark-subtle)", fontSize: "0.85rem", marginTop: "0.3rem" }}>
             Kirsten Capangpangan · Ethan Koester-Schmidt · Dawson Ulrich · March 18, 2026
           </p>
         </div>
@@ -58,10 +58,10 @@ export function FullReport() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Sidebar: Table of Contents */}
           <div className="lg:col-span-1">
-            <div className="rounded-xl border p-5 sticky top-24" style={{ background: "#0d1530", borderColor: "#1e3a5f" }}>
+            <div className="rounded-xl border p-5 sticky top-24" style={{ background: "var(--uark-card-strong)", borderColor: "var(--uark-border)" }}>
               <div className="flex items-center gap-2 mb-4">
-                <FileText size={16} color="#06b6d4" />
-                <h3 style={{ color: "#06b6d4", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                <FileText size={16} color="var(--uark-red)" />
+                <h3 style={{ color: "var(--uark-red)", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.06em", textTransform: "uppercase" }}>
                   Table of Contents
                 </h3>
               </div>
@@ -71,12 +71,12 @@ export function FullReport() {
                     key={s.path}
                     to={s.path}
                     className="flex items-center gap-2 py-2 px-3 rounded-lg no-underline text-sm transition-all group"
-                    style={{ color: "#94a3b8" }}
+                    style={{ color: "var(--uark-muted)" }}
                   >
-                    <ChevronRight size={12} color="#475569" className="group-hover:text-cyan-400 transition-colors flex-shrink-0" />
+                    <ChevronRight size={12} color="var(--uark-subtle)" className="flex-shrink-0 opacity-70 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
                     <div>
-                      <div style={{ color: "#475569", fontSize: "0.7rem" }}>{s.label}</div>
-                      <div style={{ color: "#cbd5e1", fontSize: "0.82rem" }}>{s.title}</div>
+                      <div style={{ color: "var(--uark-subtle)", fontSize: "0.7rem" }}>{s.label}</div>
+                      <div style={{ color: "var(--uark-ink)", fontSize: "0.82rem" }}>{s.title}</div>
                     </div>
                   </NavLink>
                 ))}
@@ -86,15 +86,15 @@ export function FullReport() {
 
           {/* Main Paper */}
           <div className="lg:col-span-2">
-            <div className="rounded-xl border overflow-hidden" style={{ background: "#0d1530", borderColor: "#1e3a5f" }}>
-              <div className="px-8 py-6 border-b flex items-center justify-between" style={{ borderColor: "#1e3a5f" }}>
+            <div className="rounded-xl border overflow-hidden" style={{ background: "var(--uark-card-strong)", borderColor: "var(--uark-border)" }}>
+              <div className="px-8 py-6 border-b flex items-center justify-between" style={{ borderColor: "var(--uark-border)" }}>
                 <div className="flex items-center gap-2">
-                  <FileText size={18} color="#06b6d4" />
-                  <span style={{ color: "#f1f5f9", fontWeight: 600 }}>Written Report</span>
+                  <FileText size={18} color="var(--uark-red)" />
+                  <span style={{ color: "var(--uark-ink)", fontWeight: 600 }}>Written Report</span>
                 </div>
                 <span
                   className="text-xs px-2 py-1 rounded"
-                  style={{ background: "rgba(6,182,212,0.1)", color: "#06b6d4" }}
+                  style={{ background: "var(--uark-soft-red)", color: "var(--uark-red)" }}
                 >
                   Second Draft
                 </span>
@@ -104,9 +104,9 @@ export function FullReport() {
                   if (i === 0) {
                     // Header block
                     return (
-                      <div key={i} className="text-center mb-10 pb-8 border-b" style={{ borderColor: "#1e3a5f" }}>
+                      <div key={i} className="text-center mb-10 pb-8 border-b" style={{ borderColor: "var(--uark-border)" }}>
                         {paragraph.split("\n").map((line, j) => (
-                          <p key={j} style={{ color: j === 1 ? "#e2e8f0" : "#94a3b8", fontWeight: j === 1 ? 700 : 400, fontSize: j === 1 ? "1.1rem" : "0.9rem", lineHeight: 1.7 }}>
+                          <p key={j} style={{ color: j === 1 ? "var(--uark-ink)" : "var(--uark-muted)", fontWeight: j === 1 ? 700 : 400, fontSize: j === 1 ? "1.1rem" : "0.9rem", lineHeight: 1.7 }}>
                             {line}
                           </p>
                         ))}
@@ -114,7 +114,7 @@ export function FullReport() {
                     );
                   }
                   return (
-                    <p key={i} style={{ color: "#94a3b8", lineHeight: 1.9, marginBottom: "1.4rem", fontSize: "0.95rem", textIndent: "2rem" }}>
+                    <p key={i} style={{ color: "var(--uark-muted)", lineHeight: 1.9, marginBottom: "1.4rem", fontSize: "0.95rem", textIndent: "2rem" }}>
                       {paragraph}
                     </p>
                   );

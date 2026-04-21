@@ -67,15 +67,15 @@ export function References() {
   return (
     <div>
       {/* Hero */}
-      <div className="border-b py-16" style={{ background: "#0d1530", borderColor: "#1e3a5f" }}>
+      <div className="border-b py-16" style={{ background: "var(--uark-card-strong)", borderColor: "var(--uark-border)" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-xs px-3 py-1 rounded-full border" style={{ color: "#06b6d4", borderColor: "rgba(6,182,212,0.4)", background: "rgba(6,182,212,0.1)" }}>
+            <span className="text-xs px-3 py-1 rounded-full border" style={{ color: "var(--uark-red)", borderColor: "var(--uark-border-strong)", background: "var(--uark-soft-red)" }}>
               Bibliography
             </span>
           </div>
-          <h1 style={{ color: "#f1f5f9", fontWeight: 800, fontSize: "clamp(1.6rem, 4vw, 2.4rem)" }}>References</h1>
-          <p style={{ color: "#94a3b8", marginTop: "0.5rem" }}>All sources cited in the research paper, formatted in APA style.</p>
+          <h1 style={{ color: "var(--uark-ink)", fontWeight: 800, fontSize: "clamp(1.6rem, 4vw, 2.4rem)" }}>References</h1>
+          <p style={{ color: "var(--uark-muted)", marginTop: "0.5rem" }}>All sources cited in the research paper, formatted in APA style.</p>
         </div>
       </div>
 
@@ -85,25 +85,25 @@ export function References() {
             <div
               key={ref.id}
               className="rounded-xl border p-5 flex gap-4"
-              style={{ background: "#0d1530", borderColor: "#1e3a5f" }}
+              style={{ background: "var(--uark-card-strong)", borderColor: "var(--uark-border)" }}
             >
               <div
                 className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0 mt-0.5"
-                style={{ background: "rgba(6,182,212,0.1)", color: "#06b6d4", fontWeight: 700, fontSize: "0.82rem" }}
+                style={{ background: "var(--uark-soft-red)", color: "var(--uark-red)", fontWeight: 700, fontSize: "0.82rem" }}
               >
                 {ref.id}
               </div>
               <div className="flex-1">
-                <p style={{ color: "#94a3b8", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "0.4rem" }}>
+                <p style={{ color: "var(--uark-muted)", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "0.4rem" }}>
                   {ref.citation}{" "}
-                  <em style={{ color: "#64748b" }}>{ref.source}</em>
+                  <em style={{ color: "var(--uark-subtle)" }}>{ref.source}</em>
                 </p>
                 <a
                   href={ref.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-xs no-underline hover:underline"
-                  style={{ color: "#3b82f6" }}
+                  style={{ color: "var(--uark-blue)" }}
                 >
                   <ExternalLink size={11} />
                   {ref.url.length > 70 ? ref.url.slice(0, 70) + "..." : ref.url}
@@ -113,12 +113,12 @@ export function References() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-xl p-5 border" style={{ background: "rgba(6,182,212,0.06)", borderColor: "rgba(6,182,212,0.2)" }}>
+        <div className="mt-10 rounded-xl p-5 border" style={{ background: "var(--uark-soft-red)", borderColor: "var(--uark-border-strong)" }}>
           <div className="flex items-center gap-2 mb-2">
-            <BookOpen size={16} color="#06b6d4" />
-            <span style={{ color: "#06b6d4", fontWeight: 700, fontSize: "0.85rem" }}>Citation Format</span>
+            <BookOpen size={16} color="var(--uark-red)" />
+            <span style={{ color: "var(--uark-red)", fontWeight: 700, fontSize: "0.85rem" }}>Citation Format</span>
           </div>
-          <p style={{ color: "#64748b", fontSize: "0.82rem" }}>
+          <p style={{ color: "var(--uark-subtle)", fontSize: "0.82rem" }}>
             All references are formatted in APA 7th edition style, as used in the original research paper.
           </p>
         </div>

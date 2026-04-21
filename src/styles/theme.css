@@ -2,6 +2,34 @@
 
 :root {
   --font-size: 16px;
+  --font-family-body: "Lato", system-ui, -apple-system, sans-serif;
+  --font-family-display: "Roboto Serif", Georgia, serif;
+  --uark-red: #9d2235;
+  --uark-red-dark: #611327;
+  --uark-blue: #2b5269;
+  --uark-gold: #dbc759;
+  --uark-green: #707a33;
+  --uark-plum: #655765;
+  --uark-sand: #dddcc5;
+  --uark-quartz: #f2f2f4;
+  --uark-gray: #c7c8ca;
+  --uark-stone: #424242;
+  --uark-page: #f8f3ec;
+  --uark-card: rgba(255, 252, 248, 0.96);
+  --uark-card-strong: #fffdf9;
+  --uark-ink: #28191d;
+  --uark-muted: #66595c;
+  --uark-subtle: #8c8082;
+  --uark-border: rgba(97, 19, 39, 0.14);
+  --uark-border-strong: rgba(97, 19, 39, 0.26);
+  --uark-soft-red: rgba(157, 34, 53, 0.08);
+  --uark-soft-red-strong: rgba(157, 34, 53, 0.16);
+  --uark-soft-blue: rgba(43, 82, 105, 0.1);
+  --uark-soft-blue-strong: rgba(43, 82, 105, 0.16);
+  --uark-soft-gold: rgba(219, 199, 89, 0.18);
+  --uark-soft-green: rgba(112, 122, 51, 0.14);
+  --uark-soft-plum: rgba(101, 87, 101, 0.14);
+  --uark-shadow: 0 24px 60px rgba(97, 19, 39, 0.1);
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
@@ -126,6 +154,12 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-family-body);
+    background:
+      radial-gradient(circle at top left, rgba(157, 34, 53, 0.08), transparent 32%),
+      linear-gradient(180deg, #fffdfa 0%, var(--uark-page) 58%, #f5eee5 100%);
+    color: var(--uark-ink);
+    min-height: 100vh;
   }
 
   /**
@@ -141,18 +175,21 @@
     font-size: var(--text-2xl);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
+    font-family: var(--font-family-display);
   }
 
   h2 {
     font-size: var(--text-xl);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
+    font-family: var(--font-family-display);
   }
 
   h3 {
     font-size: var(--text-lg);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
+    font-family: var(--font-family-display);
   }
 
   h4 {
@@ -177,5 +214,15 @@
     font-size: var(--text-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
+  }
+
+  a {
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  ::selection {
+    background: rgba(157, 34, 53, 0.18);
+    color: var(--uark-red-dark);
   }
 }

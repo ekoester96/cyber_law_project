@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { Shield, Users, BookOpen, ArrowRight } from "lucide-react";
+import { Shield, Users, BookOpen, ArrowRight, Scale, FileText } from "lucide-react";
 import kirstenPhoto from "../../assets/kirsten-capangpangan.jpeg";
 import ethanPhoto from "../../assets/ethan-koester-schmidt.jpeg";
 import dawsonPhoto from "../../assets/dawson-ulrich.png";
@@ -37,177 +37,404 @@ const teamMembers = [
 ];
 
 const quickLinks = [
-  { label: "How Location Tracking Works", path: "/how-it-works", desc: "GPS, cellular towers, and modern tracking methods" },
-  { label: "Data Exploitation", path: "/data-exploitation", desc: "Price discrimination and consumer harm" },
-  { label: "Legal Cases", path: "/legal-cases", desc: "Meta's $37.5M settlement and more" },
-  { label: "Health Data Laws", path: "/health-data-laws", desc: "California AB 45 & Washington MHMD Act" },
-  { label: "FTC Actions", path: "/ftc-actions", desc: "Regulatory crackdowns on data brokers" },
-  { label: "National Security", path: "/national-security", desc: "Strava heatmap and military vulnerabilities" },
-  { label: "Gov. Surveillance", path: "/gov-surveillance", desc: "Real-time bidding and government tracking" },
+  { label: "How Location Tracking Works", path: "/how-it-works", desc: "GPS, cellular towers, and the technical systems that turn movement into data." },
+  { label: "Data Exploitation", path: "/data-exploitation", desc: "How behavioral and location signals are monetized against consumers." },
+  { label: "Legal Cases", path: "/legal-cases", desc: "Key litigation shaping how platforms can collect and use location data." },
+  { label: "Health Data Laws", path: "/health-data-laws", desc: "State-level protections for sensitive location and health-related information." },
+  { label: "FTC Actions", path: "/ftc-actions", desc: "Regulatory enforcement against brokers and hidden consent practices." },
+  { label: "National Security", path: "/national-security", desc: "How publicly available location data can expose military and operational risk." },
+  { label: "Gov. Surveillance", path: "/gov-surveillance", desc: "The commercial ad ecosystem as a pipeline into warrantless tracking." },
+];
+
+const researchSignals = [
+  { label: "Research Topics", value: "07", detail: "From GPS methods to government surveillance." },
+  { label: "Student Authors", value: "03", detail: "University of Arkansas contributors." },
+  { label: "Final Paper", value: "01", detail: "A full portfolio tying law, technology, and harm together." },
 ];
 
 export function Home() {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative overflow-hidden" style={{ minHeight: "90vh" }}>
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1751448555253-f39c06e29d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjeWJlcnNlY3VyaXR5JTIwZGlnaXRhbCUyMHByaXZhY3klMjBzdXJ2ZWlsbGFuY2UlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3NTY3MDcyOXww&ixlib=rb-4.1.0&q=80&w=1080)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "brightness(0.2)",
-          }}
-        />
-        {/* Grid overlay */}
+      <section
+        className="relative overflow-hidden"
+        style={{
+          minHeight: "calc(100svh - 126px)",
+          background:
+            "linear-gradient(135deg, var(--uark-red-dark) 0%, #7b182b 48%, var(--uark-red) 100%)",
+        }}
+      >
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(6,182,212,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.05) 1px, transparent 1px)",
-            backgroundSize: "50px 50px",
+              "radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 26%), linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
+            backgroundSize: "auto, 52px 52px, 52px 52px",
+            opacity: 0.6,
           }}
         />
-        <div className="relative max-w-5xl mx-auto px-6 py-24 flex flex-col items-center text-center" style={{ minHeight: "90vh", justifyContent: "center" }}>
-          <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs mb-6 border"
-            style={{ background: "rgba(6,182,212,0.1)", borderColor: "rgba(6,182,212,0.3)", color: "#06b6d4" }}
-          >
-            <Shield size={12} />
-            Cybersecurity & Privacy Law · Spring 2026
-          </div>
-          <h1
-            className="mb-4"
-            style={{
-              fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              fontWeight: 800,
-              lineHeight: 1.1,
-              color: "#f1f5f9",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Location Tracking and Privacy
-          </h1>
-          <p
-            style={{
-              fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)",
-              color: "#06b6d4",
-              fontWeight: 600,
-              marginBottom: "2rem",
-            }}
-          >
-            Legal Protections in the Digital Age of Social Media
-          </p>
+        <div
+          className="absolute inset-y-0 right-0 hidden lg:block"
+          style={{
+            width: "42%",
+            background:
+              "linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04))",
+            clipPath: "polygon(18% 0, 100% 0, 100% 100%, 0 100%)",
+          }}
+        />
 
-          {/* Quick nav links */}
-          <div className="flex flex-wrap justify-center gap-3 mt-4">
-            <NavLink
-              to="/how-it-works"
-              className="px-5 py-2.5 rounded-lg text-sm no-underline transition-all"
-              style={{ background: "linear-gradient(135deg, #06b6d4, #3b82f6)", color: "white", fontWeight: 600 }}
+        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20 grid gap-12 lg:grid-cols-[1.25fr_0.75fr] items-end">
+          <div className="max-w-3xl">
+            <div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs uppercase tracking-[0.18em]"
+              style={{
+                borderColor: "rgba(255,255,255,0.22)",
+                background: "rgba(255,255,255,0.08)",
+                color: "rgba(255,255,255,0.88)",
+                fontWeight: 800,
+              }}
             >
-              Explore the Research
-            </NavLink>
-            <NavLink
-              to="/full-report"
-              className="px-5 py-2.5 rounded-lg text-sm no-underline border transition-all"
-              style={{ borderColor: "#06b6d4", color: "#06b6d4", background: "rgba(6,182,212,0.08)" }}
+              <Shield size={14} />
+              Cybersecurity & Privacy Law · Spring 2026
+            </div>
+
+            <p
+              className="mt-8"
+              style={{
+                color: "rgba(255,255,255,0.72)",
+                fontSize: "0.84rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                fontWeight: 900,
+              }}
             >
-              Read Full Report
-            </NavLink>
-          </div>
-        </div>
-      </section>
+              University of Arkansas Student Research
+            </p>
 
-      {/* Abstract */}
-      <section className="py-16" style={{ background: "#0d1530" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-6">
-            <BookOpen size={20} color="#06b6d4" />
-            <h2 style={{ color: "#06b6d4", fontSize: "0.85rem", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 700 }}>
-              Abstract
-            </h2>
-          </div>
-          <p style={{ color: "#cbd5e1", lineHeight: 1.85, fontSize: "1.05rem" }}>
-            With features like Google Maps or Find My Phone, location tracking has become a core feature of everyday
-            life. Social media apps like Snapchat let users see what is going on near them, while Facebook Marketplace
-            lets users find nearby deals. Location tracking is vital to these services, but uses of this data are not
-            all beneficial to users. This same data can lead to exposure to surveillance, data breaches, and misuse by
-            businesses, hackers, and often even governments. Recent legislation has created meaningful progress in
-            regulating location data collection; however, these protections are reactive and leave significant gaps that
-            continue to expose users to exploitation, risks, and a constant online surveillance state. This portfolio
-            examines how location tracking works, who benefits, who is harmed, and what legal frameworks exist — and
-            where they fall short.
-          </p>
-        </div>
-      </section>
+            <h1
+              className="mt-4"
+              style={{
+                color: "white",
+                fontSize: "clamp(2.8rem, 7vw, 6rem)",
+                fontWeight: 800,
+                lineHeight: 0.92,
+                letterSpacing: "-0.05em",
+                maxWidth: "12ch",
+              }}
+            >
+              Location Tracking and Privacy
+            </h1>
 
-      {/* Team Members */}
-      <section className="py-16" style={{ background: "#080d1a" }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-10">
-            <Users size={20} color="#06b6d4" />
-            <h2 style={{ color: "#06b6d4", fontSize: "0.85rem", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 700 }}>
-              Research Team
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {teamMembers.map((member) => (
-              <div
-                key={member.name}
-                className="rounded-xl overflow-hidden border flex flex-col items-center text-center pb-6"
-                style={{ background: "#0d1530", borderColor: "#1e3a5f" }}
+            <p
+              className="mt-6 max-w-2xl"
+              style={{
+                color: "rgba(255,255,255,0.84)",
+                fontSize: "clamp(1.05rem, 2vw, 1.3rem)",
+                lineHeight: 1.75,
+              }}
+            >
+              An Arkansas-themed research portfolio on how location data powers convenience while also enabling
+              exploitation, surveillance, and legal exposure across the modern digital ecosystem.
+            </p>
+
+            <div className="flex flex-wrap gap-3 mt-8">
+              <NavLink
+                to="/how-it-works"
+                className="px-5 py-3 rounded-full text-sm no-underline"
+                style={{
+                  background: "white",
+                  color: "var(--uark-red-dark)",
+                  fontWeight: 800,
+                  boxShadow: "0 20px 35px rgba(0,0,0,0.12)",
+                }}
               >
-                <div className="w-full h-48 overflow-hidden">
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover"
-                    style={member.imageStyle}
-                  />
-                </div>
-                <div className="pt-5 px-4">
-                  <h3 style={{ color: "#f1f5f9", fontWeight: 700, fontSize: "1rem", marginBottom: "0.25rem" }}>
-                    {member.name}
-                  </h3>
-                  <p style={{ color: "#06b6d4", fontSize: "0.8rem", letterSpacing: "0.05em" }}>{member.role}</p>
-                </div>
+                Explore the Research
+              </NavLink>
+              <NavLink
+                to="/full-report"
+                className="px-5 py-3 rounded-full text-sm no-underline border"
+                style={{
+                  borderColor: "rgba(255,255,255,0.24)",
+                  color: "white",
+                  background: "rgba(255,255,255,0.06)",
+                  fontWeight: 700,
+                }}
+              >
+                Read the Full Report
+              </NavLink>
+            </div>
+          </div>
+
+          <div className="self-stretch flex flex-col justify-end">
+            <div
+              className="pl-6 lg:pl-8"
+              style={{
+                borderLeft: "1px solid rgba(255,255,255,0.22)",
+                color: "white",
+              }}
+            >
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.72)",
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  fontWeight: 900,
+                }}
+              >
+                Portfolio Snapshot
+              </p>
+              <div className="mt-5 space-y-5">
+                {researchSignals.map((signal) => (
+                  <div key={signal.label}>
+                    <div className="flex items-baseline gap-3">
+                      <span style={{ fontSize: "2.2rem", fontWeight: 800, lineHeight: 1 }}>{signal.value}</span>
+                      <span style={{ fontSize: "0.9rem", fontWeight: 700 }}>{signal.label}</span>
+                    </div>
+                    <p style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.7, marginTop: "0.3rem" }}>
+                      {signal.detail}
+                    </p>
+                  </div>
+                ))}
               </div>
+              <p className="mt-8" style={{ color: "rgba(255,255,255,0.66)", lineHeight: 1.75 }}>
+                Designed around official University of Arkansas web colors and typography guidance, while presented as
+                a student project rather than an official university page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="py-20"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(255,253,249,0.96), rgba(255,248,242,0.92))",
+          borderBottom: "1px solid var(--uark-border)",
+        }}
+      >
+        <div className="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-[0.72fr_1.28fr] items-start">
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <BookOpen size={18} color="var(--uark-red)" />
+              <p
+                style={{
+                  color: "var(--uark-red)",
+                  fontSize: "0.8rem",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  fontWeight: 900,
+                }}
+              >
+                Research Abstract
+              </p>
+            </div>
+            <p
+              style={{
+                color: "var(--uark-red-dark)",
+                fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
+                lineHeight: 1.45,
+                fontWeight: 700,
+              }}
+            >
+              Location data sits at the center of a tradeoff between utility, monetization, and personal autonomy.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <p style={{ color: "var(--uark-muted)", lineHeight: 1.95, fontSize: "1rem" }}>
+              With features like Google Maps and Find My Phone, location tracking has become part of everyday life.
+              Social platforms, marketplaces, and mobile services depend on it, but the same data can also fuel
+              surveillance, data breaches, discriminatory pricing, and misuse by companies, brokers, hackers, and
+              governments. This portfolio examines how tracking works, who benefits, who is harmed, and how current
+              legal protections still leave serious gaps.
+            </p>
+            <div
+              className="p-6"
+              style={{
+                background: "var(--uark-soft-red)",
+                border: "1px solid var(--uark-border)",
+                boxShadow: "var(--uark-shadow)",
+              }}
+            >
+              <p
+                style={{
+                  color: "var(--uark-red)",
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  fontWeight: 900,
+                }}
+              >
+                Central Argument
+              </p>
+              <p className="mt-3" style={{ color: "var(--uark-ink)", lineHeight: 1.85 }}>
+                Legislative and regulatory progress has been meaningful, but mostly reactive. Without stronger federal
+                privacy protection, users remain exposed to exploitation on the very systems they rely on for work,
+                school, and daily communication.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="py-20"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(221,220,197,0.34), rgba(255,252,248,0.96))",
+          borderBottom: "1px solid var(--uark-border)",
+        }}
+      >
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center gap-3 mb-10">
+            <Users size={18} color="var(--uark-red)" />
+            <p
+              style={{
+                color: "var(--uark-red)",
+                fontSize: "0.8rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                fontWeight: 900,
+              }}
+            >
+              Research Team
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.map((member) => (
+              <figure key={member.name} className="group">
+                <div
+                  className="overflow-hidden"
+                  style={{
+                    background: "var(--uark-card-strong)",
+                    border: "1px solid var(--uark-border)",
+                    boxShadow: "var(--uark-shadow)",
+                  }}
+                >
+                  <div className="h-72 overflow-hidden">
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      style={member.imageStyle}
+                    />
+                  </div>
+                </div>
+                <figcaption className="pt-4">
+                  <p style={{ color: "var(--uark-ink)", fontWeight: 700, fontSize: "1.02rem" }}>{member.name}</p>
+                  <p
+                    style={{
+                      color: "var(--uark-red)",
+                      fontSize: "0.76rem",
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      fontWeight: 800,
+                      marginTop: "0.35rem",
+                    }}
+                  >
+                    {member.role}
+                  </p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Topic Navigator */}
-      <section className="py-16" style={{ background: "#0d1530" }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 style={{ color: "#f1f5f9", fontWeight: 700, marginBottom: "2rem", fontSize: "1.4rem" }}>
-            Explore Research Topics
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <section className="py-20" style={{ background: "rgba(255,252,248,0.92)" }}>
+        <div className="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <Scale size={18} color="var(--uark-red)" />
+              <p
+                style={{
+                  color: "var(--uark-red)",
+                  fontSize: "0.8rem",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  fontWeight: 900,
+                }}
+              >
+                Explore the Portfolio
+              </p>
+            </div>
+            <h2
+              style={{
+                color: "var(--uark-ink)",
+                fontWeight: 700,
+                fontSize: "clamp(1.6rem, 3vw, 2.5rem)",
+                lineHeight: 1.12,
+                letterSpacing: "-0.03em",
+                maxWidth: "12ch",
+              }}
+            >
+              Seven sections tracking the law, the technology, and the harm.
+            </h2>
+            <p className="mt-5 max-w-md" style={{ color: "var(--uark-muted)", lineHeight: 1.85 }}>
+              Each section focuses on one part of the location-data ecosystem, moving from technical foundations to
+              legal responses and broader social consequences.
+            </p>
+
+            <NavLink
+              to="/full-report"
+              className="inline-flex items-center gap-2 mt-8 no-underline"
+              style={{ color: "var(--uark-red-dark)", fontWeight: 800 }}
+            >
+              <FileText size={16} />
+              Open the full written paper
+            </NavLink>
+          </div>
+
+          <div
+            style={{
+              background: "var(--uark-card-strong)",
+              border: "1px solid var(--uark-border)",
+              boxShadow: "var(--uark-shadow)",
+            }}
+          >
             {quickLinks.map((link, i) => (
               <NavLink
                 key={link.path}
                 to={link.path}
-                className="group rounded-xl p-5 border no-underline transition-all"
-                style={{ background: "#080d1a", borderColor: "#1e3a5f" }}
+                className="group grid grid-cols-[auto_1fr_auto] gap-5 px-6 py-5 no-underline"
+                style={{
+                  borderTop: i === 0 ? "none" : "1px solid var(--uark-border)",
+                }}
               >
-                <div className="flex items-start justify-between mb-2">
-                  <span
-                    className="w-7 h-7 rounded flex items-center justify-center text-xs"
-                    style={{ background: "rgba(6,182,212,0.15)", color: "#06b6d4", fontWeight: 700 }}
+                <span
+                  style={{
+                    color: "var(--uark-red)",
+                    fontSize: "0.78rem",
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    fontWeight: 900,
+                    paddingTop: "0.15rem",
+                  }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3
+                    style={{
+                      color: "var(--uark-ink)",
+                      fontWeight: 700,
+                      fontSize: "1rem",
+                      marginBottom: "0.35rem",
+                    }}
                   >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <ArrowRight size={16} color="#3b82f6" className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {link.label}
+                  </h3>
+                  <p style={{ color: "var(--uark-muted)", lineHeight: 1.75 }}>{link.desc}</p>
                 </div>
-                <h3 style={{ color: "#f1f5f9", fontWeight: 600, fontSize: "0.95rem", marginBottom: "0.4rem" }}>
-                  {link.label}
-                </h3>
-                <p style={{ color: "#64748b", fontSize: "0.8rem" }}>{link.desc}</p>
+                <ArrowRight
+                  size={18}
+                  color="var(--uark-red)"
+                  className="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all mt-1"
+                />
               </NavLink>
             ))}
           </div>

@@ -8,37 +8,82 @@ interface PageHeroProps {
 
 export function PageHero({ number, label, title, subtitle, image }: PageHeroProps) {
   return (
-    <div className="relative overflow-hidden" style={{ minHeight: "320px" }}>
+    <div className="relative overflow-hidden" style={{ minHeight: "360px" }}>
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "brightness(0.2)",
+          filter: "saturate(0.85) brightness(0.6)",
         }}
       />
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, rgba(8,13,26,0.9) 40%, transparent)",
+          background:
+            "linear-gradient(90deg, rgba(97, 19, 39, 0.96) 0%, rgba(97, 19, 39, 0.88) 34%, rgba(97, 19, 39, 0.55) 58%, rgba(97, 19, 39, 0.22) 100%)",
         }}
       />
-      <div className="relative max-w-5xl mx-auto px-6 py-20 flex flex-col justify-end" style={{ minHeight: "320px" }}>
-        <div className="flex items-center gap-3 mb-3">
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+          maskImage: "linear-gradient(90deg, rgba(0,0,0,0.8), transparent 80%)",
+        }}
+      />
+      <div className="relative max-w-6xl mx-auto px-6 py-20 flex flex-col justify-end" style={{ minHeight: "360px" }}>
+        <div className="flex flex-wrap items-center gap-3 mb-5">
           <span
             className="text-xs px-3 py-1 rounded-full border"
-            style={{ color: "#06b6d4", borderColor: "rgba(6,182,212,0.4)", background: "rgba(6,182,212,0.1)" }}
+            style={{
+              color: "white",
+              borderColor: "rgba(255,255,255,0.24)",
+              background: "rgba(255,255,255,0.08)",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              fontWeight: 800,
+            }}
           >
             {label}
           </span>
-          <span style={{ color: "#475569", fontSize: "0.8rem" }}>Section {number}</span>
+          <span
+            style={{
+              color: "rgba(255,255,255,0.72)",
+              fontSize: "0.8rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+            }}
+          >
+            Section {number}
+          </span>
         </div>
-        <h1 style={{ color: "#f1f5f9", fontWeight: 800, fontSize: "clamp(1.6rem, 4vw, 2.6rem)", lineHeight: 1.15, maxWidth: "700px" }}>
+        <h1
+          style={{
+            color: "white",
+            fontWeight: 800,
+            fontSize: "clamp(1.8rem, 4vw, 3.1rem)",
+            lineHeight: 1.08,
+            maxWidth: "780px",
+            letterSpacing: "-0.03em",
+          }}
+        >
           {title}
         </h1>
         {subtitle && (
-          <p style={{ color: "#94a3b8", marginTop: "0.75rem", maxWidth: "600px", fontSize: "1rem" }}>{subtitle}</p>
+          <p
+            style={{
+              color: "rgba(255,255,255,0.82)",
+              marginTop: "0.95rem",
+              maxWidth: "660px",
+              fontSize: "1.02rem",
+              lineHeight: 1.75,
+            }}
+          >
+            {subtitle}
+          </p>
         )}
       </div>
     </div>
