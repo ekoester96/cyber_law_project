@@ -46,7 +46,7 @@ export function Layout() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-[0.72rem] uppercase tracking-[0.18em]">
-          Fayetteville, Arkansas · Student Research Portfolio
+          Fayetteville, Arkansas · Cybersecurity Student Research Portfolio
         </div>
       </div>
 
@@ -89,7 +89,7 @@ export function Layout() {
                     letterSpacing: "-0.01em",
                   }}
                 >
-                  Location Tracking & Privacy Law
+                  Location Tracking & Privacy
                 </div>
               </div>
             </NavLink>
