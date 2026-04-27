@@ -197,8 +197,7 @@ export function Home() {
                 ))}
               </div>
               <p className="mt-8" style={{ color: "rgba(255,255,255,0.66)", lineHeight: 1.75 }}>
-                Designed around official University of Arkansas web colors and typography guidance, while presented as
-                a student project rather than an official university page.
+                A comprehensive research portfolio exploring the intersection of location tracking, privacy, and law.
               </p>
             </div>
           </div>
