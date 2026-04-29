@@ -11,7 +11,7 @@ const teamMembers = [
     photo: kirstenPhoto,
     imageStyle: {
       objectPosition: "center 30%",
-      transform: "scale(1.35)",
+      transform: "scale(1.00)",
       filter: "brightness(1.08) contrast(1.05) saturate(1.08)",
     },
   },
