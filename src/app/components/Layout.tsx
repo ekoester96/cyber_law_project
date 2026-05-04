@@ -12,6 +12,7 @@ const navItems = [
       { label: "Legal Cases", path: "/legal-cases" },
       { label: "Health Data Laws", path: "/health-data-laws" },
       { label: "FTC Actions", path: "/ftc-actions" },
+      { label: "Benefits of Tracking", path: "/benefits-of-tracking" },
       { label: "National Security", path: "/national-security" },
       { label: "Gov. Surveillance", path: "/gov-surveillance" },
     ],

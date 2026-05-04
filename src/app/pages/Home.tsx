@@ -37,19 +37,20 @@ const teamMembers = [
 ];
 
 const quickLinks = [
-  { label: "How Location Tracking Works", path: "/how-it-works", desc: "GPS, cellular towers, and the technical systems that turn movement into data." },
-  { label: "Data Exploitation", path: "/data-exploitation", desc: "How behavioral and location signals are monetized against consumers." },
-  { label: "Legal Cases", path: "/legal-cases", desc: "Key litigation shaping how platforms can collect and use location data." },
-  { label: "Health Data Laws", path: "/health-data-laws", desc: "State-level protections for sensitive location and health-related information." },
-  { label: "FTC Actions", path: "/ftc-actions", desc: "Regulatory enforcement against brokers and hidden consent practices." },
-  { label: "National Security", path: "/national-security", desc: "How publicly available location data can expose military and operational risk." },
-  { label: "Gov. Surveillance", path: "/gov-surveillance", desc: "The commercial ad ecosystem as a pipeline into warrantless tracking." },
+  { label: "How Location Tracking Works", path: "/how-it-works", desc: "GPS, cell towers, Wi-Fi, IP tracking, and the pattern-of-life systems built on top of them." },
+  { label: "Data Exploitation", path: "/data-exploitation", desc: "How behavioral and location signals become wage discrimination, price discrimination, and opaque market manipulation." },
+  { label: "Legal Cases", path: "/legal-cases", desc: "The Meta settlement and what it revealed about covert IP-based location inference." },
+  { label: "Health Data Laws", path: "/health-data-laws", desc: "Dobbs-era protections, clinic geofencing limits, and the risks created by data brokers." },
+  { label: "FTC Actions", path: "/ftc-actions", desc: "How federal enforcement reshaped the legal meaning of meaningful consent for location data." },
+  { label: "Benefits of Tracking", path: "/benefits-of-tracking", desc: "The paper's counterargument: emergency response, business forecasting, and law-enforcement utility." },
+  { label: "National Security", path: "/national-security", desc: "How fitness heatmaps and movement data can expose military installations and personnel." },
+  { label: "Gov. Surveillance", path: "/gov-surveillance", desc: "Real-time bidding as the commercial pipeline into warrantless government tracking." },
 ];
 
 const researchSignals = [
-  { label: "Research Topics", value: "07", detail: "From GPS methods to government surveillance." },
+  { label: "Research Topics", value: "08", detail: "From technical tracking methods to surveillance, law, and the paper's counterargument." },
   { label: "Student Authors", value: "03", detail: "University of Arkansas contributors." },
-  { label: "Final Paper", value: "01", detail: "A full portfolio tying law, technology, and harm together." },
+  { label: "Final Paper", value: "01", detail: "A final Spring 2026 draft mapped into a full web portfolio and bibliography." },
 ];
 
 export function Home() {
@@ -132,8 +133,8 @@ export function Home() {
                 lineHeight: 1.75,
               }}
             >
-              An Arkansas-themed research portfolio on how location data powers convenience while also enabling
-              exploitation, surveillance, and legal exposure across the modern digital ecosystem.
+              From Snapchat maps and Marketplace deals to data brokers and government buyers, this portfolio follows
+              how everyday location services create both convenience and serious privacy, security, and legal risk.
             </p>
 
             <div className="flex flex-wrap gap-3 mt-8">
@@ -242,11 +243,11 @@ export function Home() {
 
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <p style={{ color: "var(--uark-muted)", lineHeight: 1.95, fontSize: "1rem" }}>
-              With features like Google Maps and Find My Phone, location tracking has become part of everyday life.
-              Social platforms, marketplaces, and mobile services depend on it, but the same data can also fuel
-              surveillance, data breaches, discriminatory pricing, and misuse by companies, brokers, hackers, and
-              governments. This portfolio examines how tracking works, who benefits, who is harmed, and how current
-              legal protections still leave serious gaps.
+              With features like Google Maps and Find My Phone, location tracking has become a core feature of everyday
+              life. Social media apps let users explore nearby events, find friends, and discover local deals, but the
+              same infrastructure can also expose people to data breaches, surveillance, exploitation, and government
+              misuse. This site translates the final paper into a web-friendly guide to how tracking works, who uses
+              it, and where legal protections still fall short.
             </p>
             <div
               className="p-6"
@@ -268,9 +269,9 @@ export function Home() {
                 Central Argument
               </p>
               <p className="mt-3" style={{ color: "var(--uark-ink)", lineHeight: 1.85 }}>
-                Legislative and regulatory progress has been meaningful, but mostly reactive. Without stronger federal
-                privacy protection, users remain exposed to exploitation on the very systems they rely on for work,
-                school, and daily communication.
+                Recent legislation and enforcement actions show meaningful progress, but the protections remain
+                reactive. Without comprehensive federal privacy law, people stay vulnerable on the systems they depend
+                on for work, school, and entertainment.
               </p>
             </div>
           </div>
@@ -371,11 +372,11 @@ export function Home() {
                 maxWidth: "12ch",
               }}
             >
-              Seven sections tracking the law, the technology, and the harm.
+              Eight sections tracking the technology, the law, the counterargument, and the harm.
             </h2>
             <p className="mt-5 max-w-md" style={{ color: "var(--uark-muted)", lineHeight: 1.85 }}>
-              Each section focuses on one part of the location-data ecosystem, moving from technical foundations to
-              legal responses and broader social consequences.
+              Each section focuses on one part of the location-data ecosystem, moving from technical foundations and
+              counterarguments to legal responses and broader social consequences.
             </p>
 
             <NavLink

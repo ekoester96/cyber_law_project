@@ -6,6 +6,7 @@ import { DataExploitation } from "./pages/DataExploitation";
 import { LegalCases } from "./pages/LegalCases";
 import { HealthDataLaws } from "./pages/HealthDataLaws";
 import { FTCActions } from "./pages/FTCActions";
+import { BenefitsOfTracking } from "./pages/BenefitsOfTracking";
 import { NationalSecurity } from "./pages/NationalSecurity";
 import { GovSurveillance } from "./pages/GovSurveillance";
 import { References } from "./pages/References";
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
       { path: "legal-cases", Component: LegalCases },
       { path: "health-data-laws", Component: HealthDataLaws },
       { path: "ftc-actions", Component: FTCActions },
+      { path: "benefits-of-tracking", Component: BenefitsOfTracking },
       { path: "national-security", Component: NationalSecurity },
       { path: "gov-surveillance", Component: GovSurveillance },
       { path: "references", Component: References },
